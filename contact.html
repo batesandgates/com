@@ -14,7 +14,6 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
-        /* ====== ALL YOUR EXISTING CSS STYLES REMAIN UNCHANGED ====== */
         :root {
             --ink: #08090b;
             --ink-2: #0e1015;
@@ -671,6 +670,12 @@
             transform: translateY(-3px);
         }
 
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .confidentiality-note {
             margin-top: 24px;
             padding-top: 24px;
@@ -836,6 +841,71 @@
             transition-delay: 0.2s;
         }
 
+        /* =============================== */
+        /*       MOBILE MODAL FIXES        */
+        /* =============================== */
+        @media (max-width: 768px) {
+
+            /* Modal inner styling */
+            .modal-box {
+                padding: 0 !important;
+            }
+
+            .modal-box>div:first-child {
+                /* header */
+                padding: 28px 24px 0 !important;
+                padding-bottom: 20px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .modal-box>div:first-child h2 {
+                font-size: 1.4rem !important;
+            }
+
+            .modal-box>div:last-child {
+                /* body */
+                padding: 0 24px 28px !important;
+            }
+
+            /* Stack input and button */
+            .modal-box .track-input-row,
+            .modal-box div[style*="display:flex"][style*="gap:12px"] {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            .modal-box input[type="text"] {
+                width: 100% !important;
+                font-size: 0.9rem !important;
+                padding: 14px 40px 14px 16px !important;
+            }
+
+            .modal-box button#modalCaseBtn {
+                width: 100% !important;
+                text-align: center !important;
+                padding: 16px !important;
+            }
+
+            /* Make text visible (already cream, but ensure placeholder contrast) */
+            .modal-box input::placeholder {
+                color: var(--ash) !important;
+                opacity: 1 !important;
+            }
+
+            /* Adjust meta grid for mobile */
+            .result-meta-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .result-meta-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Already existing responsive rules */
         @media (max-width: 1100px) {
             .contact-layout {
                 grid-template-columns: 1fr;
@@ -1026,7 +1096,7 @@
             </div>
         </div>
 
-        <!-- Contact Form Column (UPDATED WITH FORMSPREE) -->
+        <!-- Contact Form Column -->
         <div class="contact-form-wrap reveal reveal-delay-1">
             <h2 class="form-title">Request a Consultation</h2>
             <p class="form-sub">A senior partner will respond within 2 business hours.</p>
@@ -1162,6 +1232,7 @@
         </div>
     </footer>
 
+    <!-- Case Status Modal (mobile fixes included) -->
     <div class="modal-overlay" id="caseModal"
         style="position:fixed;inset:0;z-index:50000;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity 0.4s,visibility 0.4s;">
         <div class="modal-box"
@@ -1180,10 +1251,10 @@
                 <p style="font-size:0.68rem;color:var(--ash-2);margin-bottom:12px;">Enter your case reference number.
                     <span
                         style="font-family:var(--ff-mono);color:var(--gold-mid);background:rgba(184,137,42,0.08);padding:2px 8px;cursor:pointer;"
-                        id="demoCodeBtn">BG-FL-XXXX-XX-XXXX</span>
+                        id="demoCodeBtn">BG-FL-4429-CV-2025</span>
                 </p>
                 <div id="notifArea"></div>
-                <div style="display:flex;gap:12px;">
+                <div style="display:flex;gap:12px;" class="track-input-row">
                     <div style="flex:1;position:relative;">
                         <input type="text" id="modalCaseInput" placeholder="Enter case reference number"
                             style="width:100%;background:var(--ink);border:1px solid rgba(184,137,42,0.15);color:var(--cream);padding:16px 50px 16px 20px;font-family:var(--ff-mono);">
@@ -1242,10 +1313,11 @@
             reveals.forEach(r => io.observe(r));
             document.querySelectorAll('.hero .reveal').forEach(r => setTimeout(() => r.classList.add('visible'), 200));
 
-            // --- Formspree initialization (replaces old form handler) ---
+            // Formspree initialization
             window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
             formspree('initForm', { formElement: '#contactForm', formId: 'xaqgklda' });
 
+            // Modal logic
             const modal = document.getElementById('caseModal');
             const closeBtn = document.getElementById('closeModalBtn');
             const caseInput = document.getElementById('modalCaseInput');
@@ -1280,7 +1352,7 @@
                 setTimeout(() => {
                     loading.style.display = 'none';
                     if (cleaned === DEMO_CASE) {
-                        results.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,137,42,0.1);border:1px solid rgba(184,137,42,0.1);margin-bottom:24px;">
+                        results.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,137,42,0.1);border:1px solid rgba(184,137,42,0.1);margin-bottom:24px;" class="result-meta-grid">
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Case Reference</div><div style="color:var(--gold-light);font-family:var(--ff-mono);">${cleaned}</div></div>
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Status</div><span style="background:rgba(200,124,26,0.1);color:#c87c1a;border:1px solid rgba(200,124,26,0.25);padding:5px 12px;font-size:0.62rem;">● In Discovery</span></div>
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Est. Resolution</div><div style="color:var(--gold-light);">Q3 2026</div></div>
@@ -1313,7 +1385,7 @@
         })();
     </script>
 
-    <!-- Formspree AJAX library (loaded after main script) -->
+    <!-- Formspree AJAX library -->
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
