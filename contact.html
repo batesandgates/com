@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Contact Us · Bates & Gates Law Consultants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        /* ====== ALL YOUR EXISTING CSS STYLES REMAIN UNCHANGED ====== */
+        :root {
+            --ink: #08090b;
+            --ink-2: #0e1015;
+            --ink-3: #151820;
+            --ink-4: #1c2030;
+            --ink-5: #242840;
+            --gold-deep: #7a5c1e;
+            --gold: #b8892a;
+            --gold-mid: #c6a15b;
+            --gold-light: #dbb67b;
+            --gold-pale: #f2d98a;
+            --cream: #f8f2e6;
+            --cream-2: #ede5d4;
+            --cream-3: #d4c9b4;
+            --ash: #8a8478;
+            --ash-2: #5e5a52;
+            --ash-3: #3a3830;
+            --white: #fdfcfa;
+            --success: #2d8a4e;
+            --success-light: #52b87a;
+            --amber: #c87c1a;
+            --ff-serif: 'Cormorant Garamond', Georgia, serif;
+            --ff-sans: 'Syne', sans-serif;
+            --ff-mono: 'DM Mono', monospace;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--ff-sans);
+            background: var(--ink);
+            color: var(--cream);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, opacity 0.2s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(198, 161, 91, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), left 0.1s, top 0.1s, border-color 0.3s, opacity 0.3s;
+        }
+
+        .cursor-ring.hovering {
+            width: 64px;
+            height: 64px;
+            border-color: var(--gold-mid);
+            background: rgba(198, 161, 91, 0.05);
+        }
+
+        body * {
+            cursor: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--ink);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-deep);
+            border-radius: 4px;
+        }
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 90000;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 32px;
+            transition: opacity 0.8s var(--ease-in-out), visibility 0.8s;
+        }
+
+        .loader.done {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            font-family: var(--ff-serif);
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-pale);
+            opacity: 0;
+            animation: loader-text 1.2s var(--ease-out) 0.3s forwards;
+        }
+
+        @keyframes loader-text {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                letter-spacing: 0.8em;
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loader-bar-wrap {
+            width: 200px;
+            height: 1px;
+            background: var(--ash-3);
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--gold-deep), var(--gold-pale), var(--gold-deep));
+            background-size: 200%;
+            animation: loader-fill 1.6s var(--ease-out) 0.4s forwards, loader-shimmer 1s linear 0.4s infinite;
+        }
+
+        @keyframes loader-fill {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes loader-shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 256px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 5000;
+            padding: 0 48px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.5s, backdrop-filter 0.5s, border-color 0.5s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header.scrolled {
+            background: rgba(8, 9, 11, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom-color: rgba(184, 137, 42, 0.12);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--cream);
+        }
+
+        .logo-emblem {
+            position: relative;
+            width: 46px;
+            height: 46px;
+        }
+
+        .logo-emblem svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-family: var(--ff-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            color: var(--gold-pale);
+        }
+
+        .logo-tagline {
+            font-size: 0.58rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ash);
+            margin-top: 2px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav a {
+            font-family: var(--ff-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ash);
+            padding: 10px 16px;
+            border-radius: 2px;
+            transition: color 0.25s, background 0.25s;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background: var(--gold-mid);
+            transition: left 0.3s var(--ease-out), right 0.3s var(--ease-out);
+        }
+
+        .nav a:hover {
+            color: var(--gold-pale);
+        }
+
+        .nav a:hover::after {
+            left: 16px;
+            right: 16px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-track-header {
+            background: none;
+            border: 1px solid rgba(184, 137, 42, 0.4);
+            color: var(--gold-light);
+            padding: 10px 22px;
+            font-family: var(--ff-sans);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-track-header:hover {
+            background: rgba(184, 137, 42, 0.1);
+            border-color: var(--gold-mid);
+            box-shadow: 0 0 24px rgba(184, 137, 42, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--ink);
+        }
+
+        .hero-mesh {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(184, 137, 42, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(120, 90, 28, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 40% at 50% 0%, rgba(198, 161, 91, 0.03) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(184, 137, 42, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184, 137, 42, 0.04) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 0%, transparent 70%);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 80px 80px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .hero-eyebrow-line {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-mid));
+        }
+
+        .hero-eyebrow-text {
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold-mid);
+        }
+
+        .hero-headline {
+            font-family: var(--ff-serif);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 0.95;
+            letter-spacing: -0.01em;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--ash);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact grid */
+        .contact-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* Office cards */
+        .office-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(184, 137, 42, 0.1);
+            border: 1px solid rgba(184, 137, 42, 0.1);
+            margin: 30px 0;
+        }
+
+        .office-card {
+            background: var(--ink-2);
+            padding: 32px 24px;
+            transition: background 0.4s, transform 0.3s;
+            position: relative;
+        }
+
+        .office-card:hover {
+            background: var(--ink-3);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+
+        .office-card h3 {
+            font-family: var(--ff-serif);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--cream);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .office-card h3 i {
+            color: var(--gold-mid);
+            font-size: 1rem;
+        }
+
+        .office-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: var(--ash);
+            line-height: 1.6;
+        }
+
+        .office-item i {
+            color: var(--gold-mid);
+            width: 16px;
+            font-size: 0.9rem;
+            margin-top: 3px;
+        }
+
+        /* Map */
+        .map-container {
+            border: 1px solid rgba(184, 137, 42, 0.15);
+            height: 320px;
+            margin: 20px 0 30px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        /* Emergency banner */
+        .emergency-banner {
+            background: var(--ink-3);
+            border: 1px solid rgba(184, 137, 42, 0.2);
+            padding: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .emergency-banner h4 {
+            font-family: var(--ff-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--cream);
+            margin-bottom: 4px;
+        }
+
+        .emergency-banner p {
+            font-size: 0.78rem;
+            color: var(--ash);
+        }
+
+        .emergency-phone {
+            font-family: var(--ff-mono);
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        /* Contact form */
+        .contact-form-wrap {
+            background: var(--ink-2);
+            border: 1px solid rgba(184, 137, 42, 0.1);
+            padding: 48px 40px;
+        }
+
+        .form-title {
+            font-family: var(--ff-serif);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .form-sub {
+            font-size: 0.82rem;
+            color: var(--ash);
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ash-2);
+            margin-bottom: 8px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            background: var(--ink);
+            border: 1px solid rgba(184, 137, 42, 0.2);
+            color: var(--cream);
+            padding: 14px 18px;
+            font-family: var(--ff-sans);
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            border-radius: 2px;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold-mid);
+            box-shadow: 0 0 0 4px rgba(184, 137, 42, 0.05);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--ash);
+            cursor: pointer;
+        }
+
+        .radio-group input[type="radio"] {
+            accent-color: var(--gold-mid);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 28px 0 24px;
+            font-size: 0.76rem;
+            color: var(--ash-2);
+            line-height: 1.6;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            accent-color: var(--gold-mid);
+            margin-top: 3px;
+        }
+
+        .checkbox-group a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
+            color: var(--ink);
+            border: none;
+            padding: 18px 32px;
+            font-family: var(--ff-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: box-shadow 0.4s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 20px 60px rgba(184, 137, 42, 0.55);
+            transform: translateY(-3px);
+        }
+
+        .confidentiality-note {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(184, 137, 42, 0.1);
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--ash-2);
+        }
+
+        .confidentiality-note i {
+            color: var(--gold-mid);
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(184, 137, 42, 0.1);
+            background: var(--ink-2);
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 72px 80px 56px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand .footer-logo-name {
+            font-family: var(--ff-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--gold-pale);
+            margin-bottom: 4px;
+            letter-spacing: 0.06em;
+        }
+
+        .footer-brand .footer-logo-tag {
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--ash-2);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.78rem;
+            color: var(--ash);
+            line-height: 1.75;
+            max-width: 280px;
+        }
+
+        .footer-col-title {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--cream-2);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(184, 137, 42, 0.1);
+        }
+
+        .footer-col a {
+            display: block;
+            text-decoration: none;
+            font-size: 0.78rem;
+            color: var(--ash);
+            padding: 6px 0;
+            letter-spacing: 0.04em;
+            transition: color 0.25s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-col p {
+            font-size: 0.78rem;
+            color: var(--ash);
+            line-height: 1.7;
+            padding: 2px 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(184, 137, 42, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ash);
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--gold-deep);
+            border-color: var(--gold-mid);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(184, 137, 42, 0.08);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--ash-3);
+        }
+
+        .status-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--success-light);
+            animation: pulse-green 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-green {
+
+            0%,
+            100% {
+                box-shadow: 0 0 6px var(--success-light);
+            }
+
+            50% {
+                box-shadow: 0 0 20px var(--success-light), 0 0 40px rgba(82, 184, 122, 0.3);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        @media (max-width: 1100px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                padding: 60px 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 24px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .nav.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(8, 9, 11, 0.98);
+                backdrop-filter: blur(24px);
+                padding: 20px 24px;
+                border-bottom: 1px solid rgba(184, 137, 42, 0.1);
+                z-index: 4999;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-inner {
+                padding: 100px 24px 60px;
+            }
+
+            .contact-layout {
+                padding: 40px 24px;
+            }
+
+            .office-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 24px;
+            }
+
+            .footer-bottom {
+                padding: 20px 24px;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader" id="loader">
+        <div class="loader-logo">Bates & Gates</div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <header class="header" id="header">
+        <a href="index.html" class="logo">
+            <div class="logo-emblem">
+                <svg viewBox="0 0 46 46" fill="none">
+                    <rect x="1" y="1" width="44" height="44" stroke="#b8892a" stroke-width="1" />
+                    <rect x="5" y="5" width="36" height="36" stroke="#b8892a" stroke-width="0.5" stroke-opacity="0.4" />
+                    <circle cx="23" cy="16" r="8" fill="none" stroke="#d4a843" stroke-width="1.5" />
+                    <line x1="23" y1="8" x2="23" y2="24" stroke="#d4a843" stroke-width="1.5" />
+                    <line x1="15" y1="16" x2="31" y2="16" stroke="#d4a843" stroke-width="1.5" />
+                    <circle cx="23" cy="16" r="2.5" fill="#e8c060" />
+                </svg>
+            </div>
+            <div class="logo-text-wrap">
+                <span class="logo-name">Bates & Gates</span>
+                <span class="logo-tagline">Premium Legal Counsel</span>
+            </div>
+        </a>
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="practice-areas.html">Practice</a>
+            <a href="attorneys.html">Attorneys</a>
+            <a href="case-results.html">Results</a>
+            <a href="blog.html">Insights</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html" style="color:var(--gold-pale);">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+                    <rect width="22" height="1.5" fill="currentColor" />
+                    <rect y="7.25" width="16" height="1.5" fill="currentColor" />
+                    <rect y="14.5" width="22" height="1.5" fill="currentColor" />
+                </svg>
+            </button>
+            <button class="btn-track-header" id="headerCaseBtn">Case Status</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-mesh"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-eyebrow reveal">
+                <div class="hero-eyebrow-line"></div>
+                <span class="hero-eyebrow-text">Connect With Us</span>
+            </div>
+            <h1 class="hero-headline reveal reveal-delay-1"><em>Contact</em> Us</h1>
+            <p class="hero-desc reveal reveal-delay-2">Strategic counsel available 24/7 for critical matters. Offices in
+                Florida, Washington D.C., San Francisco, and London.</p>
+        </div>
+    </section>
+
+    <div class="contact-layout">
+        <!-- Office Info Column -->
+        <div>
+            <div class="reveal">
+                <h2
+                    style="font-family:var(--ff-serif);font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:10px;">
+                    Our Offices</h2>
+                <p style="color:var(--ash);font-size:0.9rem;margin-bottom:30px;">Global reach with local presence</p>
+            </div>
+
+            <div class="office-grid reveal">
+                <div class="office-card">
+                    <h3><i class="fas fa-building"></i> Florida</h3>
+                    <div class="office-item"><i class="fas fa-map-marker-alt"></i> 203 N Armenia Ave, Suite
+                        101<br>Tampa, FL 33609</div>
+                    <div class="office-item"><i class="fas fa-phone"></i> (503) 395-2074</div>
+                    <div class="office-item"><i class="fas fa-envelope"></i> bates.and.gates.law@consultant.com</div>
+                    <div class="office-item"><i class="fas fa-clock"></i> Mon-Fri: 7AM - 9PM</div>
+                </div>
+                <div class="office-card">
+                    <h3><i class="fas fa-building"></i> Washington D.C.</h3>
+                    <div class="office-item"><i class="fas fa-map-marker-alt"></i> 1201 Pennsylvania Ave
+                        NW<br>Washington, DC 20004</div>
+                    <div class="office-item"><i class="fas fa-phone"></i> (202) 555-0123</div>
+                    <div class="office-item"><i class="fas fa-envelope"></i> dc@batesandgateslaw.com</div>
+                    <div class="office-item"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 8PM</div>
+                </div>
+                <div class="office-card">
+                    <h3><i class="fas fa-building"></i> San Francisco</h3>
+                    <div class="office-item"><i class="fas fa-map-marker-alt"></i> 101 California St, Suite 4000<br>San
+                        Francisco, CA 94111</div>
+                    <div class="office-item"><i class="fas fa-phone"></i> (415) 555-0456</div>
+                    <div class="office-item"><i class="fas fa-envelope"></i> sf@batesandgateslaw.com</div>
+                    <div class="office-item"><i class="fas fa-clock"></i> Mon-Fri: 7AM - 7PM</div>
+                </div>
+                <div class="office-card">
+                    <h3><i class="fas fa-building"></i> London</h3>
+                    <div class="office-item"><i class="fas fa-map-marker-alt"></i> 1 Poultry, EC2R 8EJ<br>London, United
+                        Kingdom</div>
+                    <div class="office-item"><i class="fas fa-phone"></i> +44 20 7946 0123</div>
+                    <div class="office-item"><i class="fas fa-envelope"></i> london@batesandgateslaw.com</div>
+                    <div class="office-item"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 7PM GMT</div>
+                </div>
+            </div>
+
+            <div class="map-container reveal">
+                <iframe src="https://www.google.com/maps?q=203+N+Armenia+Ave+Suite+101+Tampa+FL+33609&output=embed"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="emergency-banner reveal">
+                <div>
+                    <h4><i class="fas fa-exclamation-triangle" style="color:var(--gold-mid);margin-right:8px;"></i> 24/7
+                        Emergency Counsel</h4>
+                    <p>For urgent legal matters requiring immediate attention</p>
+                </div>
+                <div class="emergency-phone">(212) 867-5399</div>
+            </div>
+        </div>
+
+        <!-- Contact Form Column (UPDATED WITH FORMSPREE) -->
+        <div class="contact-form-wrap reveal reveal-delay-1">
+            <h2 class="form-title">Request a Consultation</h2>
+            <p class="form-sub">A senior partner will respond within 2 business hours.</p>
+
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" name="first-name" class="form-input" data-fs-field required>
+                        <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="first-name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" name="last-name" class="form-input" data-fs-field required>
+                        <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="last-name"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="email" class="form-input" data-fs-field required>
+                        <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-input" data-fs-field>
+                        <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="phone"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company/Organization</label>
+                    <input type="text" name="company" class="form-input" data-fs-field>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Practice Area *</label>
+                    <select name="practice-area" class="form-select" data-fs-field required>
+                        <option value="">Select a practice area</option>
+                        <option>Complex Litigation</option>
+                        <option>Corporate Advisory</option>
+                        <option>Intellectual Property</option>
+                        <option>Executive Defense</option>
+                        <option>Global Compliance</option>
+                        <option>Emerging Technology</option>
+                        <option>Other</option>
+                    </select>
+                    <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="practice-area"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Case Description *</label>
+                    <textarea name="message" class="form-textarea"
+                        placeholder="Please provide a brief description of your legal matter..." data-fs-field
+                        required></textarea>
+                    <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="message"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Contact Method</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="contact-method" value="email" checked> Email</label>
+                        <label><input type="radio" name="contact-method" value="phone"> Phone</label>
+                        <label><input type="radio" name="contact-method" value="either"> Either</label>
+                    </div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" data-fs-field required>
+                    <label for="consent">I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                        I understand that submitting this form does not create an attorney-client relationship.*</label>
+                    <span style="color:#e0554a; font-size:0.7rem; display:block;" data-fs-error="consent"></span>
+                </div>
+
+                <!-- Formspree success / error messages -->
+                <div data-fs-success
+                    style="display:none; margin-bottom:20px; padding:16px; background:rgba(45,138,78,0.1); border:1px solid rgba(82,184,122,0.3); color:var(--success-light); text-align:center;">
+                    <i class="fas fa-check-circle"></i> Thank you! Your request has been sent. A partner will contact
+                    you soon.
+                </div>
+                <div data-fs-error
+                    style="display:none; margin-bottom:20px; padding:16px; background:rgba(224,85,74,0.08); border:1px solid rgba(224,85,74,0.2); color:#e0554a; text-align:center;">
+                    <i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please check the fields and
+                    try again.
+                </div>
+
+                <button type="submit" class="btn-submit" data-fs-submit-btn>
+                    <span>Submit Consultation Request</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            <div class="confidentiality-note">
+                <i class="fas fa-shield-alt"></i> Confidentiality assured. All inquiries are protected.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-logo-name">Bates & Gates</div>
+                <span class="footer-logo-tag">Premium Legal Counsel LLP</span>
+                <p class="footer-brand-desc">Where legal excellence meets strategic innovation. Licensed and insured in
+                    every jurisdiction we practice.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Explore</div>
+                <a href="about.html">About Us</a>
+                <a href="practice-areas.html">Practice Areas</a>
+                <a href="attorneys.html">Our Team</a>
+                <a href="case-results.html">Case Results</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Resources</div>
+                <a href="blog.html">Legal Insights</a>
+                <a href="resources.html">Downloads</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Contact</div>
+                <a href="contact.html">Offices</a>
+                <a href="contact.html">Consultation</a>
+                <p style="margin-top:4px;">(813) 327-2099</p>
+                <p>bates.and.gates.law@consultant.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Bates & Gates Law Consultants LLP. Attorney advertising. Prior results do not guarantee similar
+                outcomes.</div>
+            <div><span class="status-dot"></span> Accepting New Clients</div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="caseModal"
+        style="position:fixed;inset:0;z-index:50000;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity 0.4s,visibility 0.4s;">
+        <div class="modal-box"
+            style="background:var(--ink-2);border:1px solid rgba(184,137,42,0.15);width:100%;max-width:720px;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(32px);transition:transform 0.5s var(--ease-out);">
+            <div
+                style="padding:40px 40px 0;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid rgba(184,137,42,0.1);padding-bottom:28px;margin-bottom:32px;">
+                <div>
+                    <div style="font-family:var(--ff-serif);font-size:1.8rem;font-weight:400;color:var(--cream);">Case
+                        Status Portal</div>
+                    <div style="font-size:0.7rem;color:var(--ash);">Real-time case progress · Secure client access</div>
+                </div>
+                <button id="closeModalBtn"
+                    style="background:none;border:none;color:var(--ash);cursor:pointer;font-size:1.4rem;">✕</button>
+            </div>
+            <div style="padding:0 40px 40px;">
+                <p style="font-size:0.68rem;color:var(--ash-2);margin-bottom:12px;">Enter your case reference number.
+                    <span
+                        style="font-family:var(--ff-mono);color:var(--gold-mid);background:rgba(184,137,42,0.08);padding:2px 8px;cursor:pointer;"
+                        id="demoCodeBtn">BG-FL-XXXX-XX-XXXX</span>
+                </p>
+                <div id="notifArea"></div>
+                <div style="display:flex;gap:12px;">
+                    <div style="flex:1;position:relative;">
+                        <input type="text" id="modalCaseInput" placeholder="Enter case reference number"
+                            style="width:100%;background:var(--ink);border:1px solid rgba(184,137,42,0.15);color:var(--cream);padding:16px 50px 16px 20px;font-family:var(--ff-mono);">
+                        <span
+                            style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--ash-2);">⌕</span>
+                    </div>
+                    <button id="modalCaseBtn"
+                        style="background:linear-gradient(135deg,var(--gold-deep),var(--gold-mid));color:var(--ink);border:none;padding:16px 32px;font-family:var(--ff-sans);font-weight:700;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;">Check
+                        Status</button>
+                </div>
+                <div id="modalLoading" style="display:none;text-align:center;padding:48px 0;">
+                    <div
+                        style="width:48px;height:48px;border:2px solid rgba(184,137,42,0.15);border-top-color:var(--gold-mid);border-radius:50%;margin:0 auto 20px;animation:spin 0.9s linear infinite;">
+                    </div>
+                    <p style="color:var(--ash);">Retrieving case information…</p>
+                </div>
+                <div id="modalResults"
+                    style="max-height:0;overflow:hidden;opacity:0;transition:max-height 0.7s,opacity 0.5s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const DEMO_CASE = 'BG-FL-4429-CV-2025';
+            window.addEventListener('load', () => {
+                setTimeout(() => document.getElementById('loader').classList.add('done'), 1800);
+            });
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            let mx = 0, my = 0, rx = 0, ry = 0;
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+            function animateRing() {
+                rx += (mx - rx) * 0.12;
+                ry += (my - ry) * 0.12;
+                ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+            document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
+                el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+            });
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40));
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+            let menuOpen = false;
+            mobileBtn.addEventListener('click', () => { menuOpen = !menuOpen; nav.classList.toggle('open', menuOpen); });
+            nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menuOpen = false; nav.classList.remove('open'); }));
+
+            const reveals = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+            }, { threshold: 0.12 });
+            reveals.forEach(r => io.observe(r));
+            document.querySelectorAll('.hero .reveal').forEach(r => setTimeout(() => r.classList.add('visible'), 200));
+
+            // --- Formspree initialization (replaces old form handler) ---
+            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#contactForm', formId: 'xaqgklda' });
+
+            const modal = document.getElementById('caseModal');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const caseInput = document.getElementById('modalCaseInput');
+            const caseBtn = document.getElementById('modalCaseBtn');
+            const loading = document.getElementById('modalLoading');
+            const results = document.getElementById('modalResults');
+            const notifArea = document.getElementById('notifArea');
+            let busy = false;
+            function openModal() {
+                modal.style.visibility = 'visible'; modal.style.opacity = '1'; modal.querySelector('.modal-box').style.transform = 'translateY(0)';
+                document.body.style.overflow = 'hidden'; caseInput.value = ''; results.style.maxHeight = '0'; results.style.opacity = '0';
+                loading.style.display = 'none'; setTimeout(() => caseInput.focus(), 300);
+            }
+            function closeModal() {
+                modal.style.visibility = 'hidden'; modal.style.opacity = '0'; modal.querySelector('.modal-box').style.transform = 'translateY(32px)';
+                document.body.style.overflow = ''; busy = false; caseBtn.disabled = false; caseBtn.textContent = 'Check Status'; loading.style.display = 'none';
+            }
+            document.getElementById('headerCaseBtn').addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.style.visibility === 'visible') closeModal(); });
+            document.getElementById('demoCodeBtn').addEventListener('click', () => { caseInput.value = DEMO_CASE; doCheck(DEMO_CASE); });
+            function showNotif(msg, error = true) {
+                notifArea.innerHTML = ''; const n = document.createElement('div'); n.style.background = error ? 'rgba(224,85,74,0.08)' : 'rgba(45,138,78,0.08)';
+                n.style.border = error ? '1px solid rgba(224,85,74,0.2)' : '1px solid rgba(82,184,122,0.2)'; n.style.color = error ? '#e0554a' : '#52b87a';
+                n.style.padding = '12px 18px'; n.style.marginBottom = '14px'; n.style.fontSize = '0.75rem'; n.textContent = msg; notifArea.appendChild(n);
+                setTimeout(() => { n.style.opacity = '0'; n.style.transition = 'opacity 0.4s'; setTimeout(() => n.remove(), 400); }, 3500);
+            }
+            function doCheck(val) {
+                if (busy) return; const cleaned = val.trim().toUpperCase(); if (!cleaned) { caseInput.focus(); return; }
+                busy = true; caseBtn.disabled = true; caseBtn.textContent = '...'; loading.style.display = 'block'; results.style.maxHeight = '0'; results.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                    if (cleaned === DEMO_CASE) {
+                        results.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,137,42,0.1);border:1px solid rgba(184,137,42,0.1);margin-bottom:24px;">
+                            <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Case Reference</div><div style="color:var(--gold-light);font-family:var(--ff-mono);">${cleaned}</div></div>
+                            <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Status</div><span style="background:rgba(200,124,26,0.1);color:#c87c1a;border:1px solid rgba(200,124,26,0.25);padding:5px 12px;font-size:0.62rem;">● In Discovery</span></div>
+                            <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Est. Resolution</div><div style="color:var(--gold-light);">Q3 2026</div></div>
+                        </div>
+                        <div style="margin-bottom:24px;"><div style="display:flex;justify-content:space-between;font-size:0.68rem;color:var(--ash);margin-bottom:10px;"><span>Case Progress</span><span style="color:var(--gold-light);">55%</span></div><div style="height:3px;background:rgba(184,137,42,0.08);"><div style="width:55%;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));"></div></div></div>
+                        <div style="display:flex;flex-direction:column;gap:18px;">
+                            <div style="display:flex;gap:18px;"><div style="width:33px;height:33px;border-radius:50%;background:rgba(45,138,78,0.1);border:1px solid rgba(82,184,122,0.4);color:#52b87a;display:flex;align-items:center;justify-content:center;">✓</div><div><div style="font-weight:600;color:var(--cream-2);">Case Filed & Complaint Served</div><div style="font-size:0.72rem;color:var(--ash);">U.S. District Court, M.D. Florida</div></div></div>
+                            <div style="display:flex;gap:18px;"><div style="width:33px;height:33px;border-radius:50%;background:rgba(200,124,26,0.1);border:1px solid rgba(200,124,26,0.4);color:#c87c1a;display:flex;align-items:center;justify-content:center;">◉</div><div><div style="font-weight:600;color:#c87c1a;">Discovery Phase — Active</div><span style="background:rgba(200,124,26,0.1);color:#c87c1a;border:1px solid rgba(200,124,26,0.2);padding:4px 12px;font-size:0.62rem;">Depositions: 6 of 12</span></div></div>
+                        </div>`;
+                        results.style.maxHeight = '2000px'; results.style.opacity = '1';
+                        showNotif('Case found. Real-time progress loaded.', false);
+                    } else {
+                        results.innerHTML = `<div style="text-align:center;padding:30px;color:var(--ash);">Case reference not found.</div>`;
+                        results.style.maxHeight = '2000px'; results.style.opacity = '1';
+                        showNotif('Case reference not found. Please verify and try again.');
+                        caseInput.value = ''; caseInput.focus();
+                    }
+                    busy = false; caseBtn.disabled = false; caseBtn.textContent = 'Check Status';
+                }, 1400);
+            }
+            caseBtn.addEventListener('click', () => doCheck(caseInput.value));
+            caseInput.addEventListener('keydown', e => { if (e.key === 'Enter') doCheck(caseInput.value); });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+            });
+        })();
+    </script>
+
+    <!-- Formspree AJAX library (loaded after main script) -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+
+</html>
