@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
+        /* ===== EXISTING STYLES (UNCHANGED) ===== */
         :root {
             --ink: #08090b;
             --ink-2: #0e1015;
@@ -67,7 +68,6 @@
             cursor: none;
         }
 
-        /* ─── CUSTOM CURSOR ─── */
         .cursor-dot {
             position: fixed;
             width: 8px;
@@ -104,7 +104,6 @@
             cursor: none;
         }
 
-        /* ─── SCROLLBAR ─── */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -118,7 +117,6 @@
             border-radius: 4px;
         }
 
-        /* ─── PAGE LOADER ─── */
         .loader {
             position: fixed;
             inset: 0;
@@ -192,7 +190,6 @@
             }
         }
 
-        /* ─── NOISE OVERLAY ─── */
         body::before {
             content: '';
             position: fixed;
@@ -204,7 +201,6 @@
             background-size: 256px;
         }
 
-        /* ─── HEADER ─── */
         .header {
             position: fixed;
             top: 0;
@@ -346,7 +342,7 @@
             padding: 8px;
         }
 
-        /* ─── HERO ─── */
+        /* Hero */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -658,7 +654,7 @@
             margin-top: 2px;
         }
 
-        /* ─── MARQUEE ─── */
+        /* Marquee */
         .marquee-section {
             border-top: 1px solid rgba(184, 137, 42, 0.1);
             border-bottom: 1px solid rgba(184, 137, 42, 0.1);
@@ -704,7 +700,7 @@
             }
         }
 
-        /* ─── SECTIONS ─── */
+        /* Sections */
         section {
             position: relative;
         }
@@ -868,7 +864,7 @@
             border-color: rgba(184, 137, 42, 0.4);
         }
 
-        /* ─── TRUST BAR ─── */
+        /* Trust bar */
         .trust-section {
             padding: 0 80px 100px;
         }
@@ -914,7 +910,7 @@
             color: var(--ash-2);
         }
 
-        /* ─── ABOUT ─── */
+        /* About */
         .about-section {
             position: relative;
             overflow: hidden;
@@ -1017,7 +1013,7 @@
             color: var(--ash);
         }
 
-        /* ─── ATTORNEYS ─── */
+        /* Attorneys */
         .attorneys-section {
             padding: 140px 80px;
             max-width: 1400px;
@@ -1115,7 +1111,7 @@
             color: var(--gold-light);
         }
 
-        /* ─── RESULTS ─── */
+        /* Results */
         .results-section {
             padding: 0 80px 120px;
         }
@@ -1161,7 +1157,7 @@
             color: var(--ash-2);
         }
 
-        /* ─── BLOG ─── */
+        /* Blog */
         .blog-section {
             padding: 120px 80px;
             max-width: 1400px;
@@ -1241,7 +1237,7 @@
             line-height: 1.6;
         }
 
-        /* ─── RESOURCES ─── */
+        /* Resources */
         .resources-section {
             padding: 0 80px 120px;
             max-width: 1400px;
@@ -1319,7 +1315,7 @@
             color: var(--gold-light);
         }
 
-        /* ─── CTA ─── */
+        /* CTA */
         .cta-section {
             padding: 140px 80px;
             max-width: 1400px;
@@ -1424,7 +1420,7 @@
             box-shadow: 0 8px 32px rgba(184, 137, 42, 0.15);
         }
 
-        /* ─── CONTACT ─── */
+        /* Contact */
         .contact-section {
             padding: 120px 80px;
             max-width: 1400px;
@@ -1539,7 +1535,7 @@
             min-height: 120px;
         }
 
-        /* ─── FOOTER ─── */
+        /* Footer */
         footer {
             border-top: 1px solid rgba(184, 137, 42, 0.1);
             background: var(--ink-2);
@@ -1672,7 +1668,7 @@
             animation: pulse-green 2.5s ease-in-out infinite;
         }
 
-        /* ─── MODAL ─── */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -2162,7 +2158,6 @@
             }
         }
 
-        /* ─── REVEAL ─── */
         .reveal {
             opacity: 0;
             transform: translateY(32px);
@@ -2190,7 +2185,6 @@
             transition-delay: 0.4s;
         }
 
-        /* ─── RESPONSIVE ─── */
         @media (max-width: 1200px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -2426,7 +2420,7 @@
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- ═══════════════ HEADER ═══════════════ -->
+    <!-- Header -->
     <header class="header" id="header">
         <a href="index.html" class="logo">
             <div class="logo-emblem">
@@ -2466,7 +2460,7 @@
         </div>
     </header>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-mesh"></div>
         <div class="hero-grid"></div>
@@ -2517,8 +2511,7 @@
                     <div>
                         <div class="hero-stat-label">Client Satisfaction</div>
                         <div class="hero-stat-desc">150+ trials successfully handled to verdict with exceptional
-                            outcomes
-                        </div>
+                            outcomes</div>
                     </div>
                 </div>
             </div>
@@ -2555,7 +2548,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ MARQUEE ═══════════════ -->
+    <!-- Marquee -->
     <div class="marquee-section">
         <div class="marquee-track">
             <div class="marquee-item">Chambers Tier 1 <span class="sep"></span></div>
@@ -2579,7 +2572,7 @@
         </div>
     </div>
 
-    <!-- ═══════════════ PRACTICE AREAS ═══════════════ -->
+    <!-- Practice Areas -->
     <section class="services-section" id="practice">
         <div class="section-header reveal">
             <div>
@@ -2599,8 +2592,7 @@
                 <h3 class="svc-title">Complex Litigation</h3>
                 <p class="svc-desc">High-stakes commercial and civil litigation with a proven track record of success in
                     federal and state courts nationwide. Our litigators bring unparalleled strategic depth to every
-                    case,
-                    from pre-trial motions through verdict and appeal.</p>
+                    case, from pre-trial motions through verdict and appeal.</p>
                 <a href="practice-areas.html#litigation" class="svc-tag">Learn More</a>
             </div>
             <div class="svc-card reveal reveal-delay-1">
@@ -2646,7 +2638,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ TRUST BAR ═══════════════ -->
+    <!-- Trust Bar -->
     <div class="trust-section">
         <div class="trust-inner reveal">
             <div class="trust-item">
@@ -2668,7 +2660,7 @@
         </div>
     </div>
 
-    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <!-- About -->
     <section class="about-section" id="about">
         <div class="about-bg-text">JUSTICE</div>
         <div class="about-inner">
@@ -2729,7 +2721,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ ATTORNEYS ═══════════════ -->
+    <!-- Attorneys -->
     <section class="attorneys-section" id="attorneys">
         <div class="section-header reveal">
             <div>
@@ -2773,7 +2765,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ RESULTS ═══════════════ -->
+    <!-- Results -->
     <div class="results-section">
         <div class="section-header reveal" style="margin-bottom:48px;">
             <div>
@@ -2808,7 +2800,7 @@
         </div>
     </div>
 
-    <!-- ═══════════════ BLOG ═══════════════ -->
+    <!-- Blog -->
     <section class="blog-section" id="insights">
         <div class="section-header reveal">
             <div>
@@ -2819,8 +2811,7 @@
                 <h2 class="section-title">Latest <em>Thinking</em></h2>
             </div>
             <p class="section-desc">Analysis and perspectives from our experts on the issues shaping the legal
-                landscape.
-            </p>
+                landscape.</p>
         </div>
         <div class="blog-grid">
             <div class="blog-card reveal">
@@ -2867,7 +2858,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ RESOURCES ═══════════════ -->
+    <!-- Resources -->
     <section class="resources-section" id="resources">
         <div class="section-header reveal">
             <div>
@@ -2905,7 +2896,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ CTA ═══════════════ -->
+    <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="cta-label reveal">
             <div class="cta-eyebrow-line"></div>
@@ -2921,7 +2912,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <!-- Contact Form (INTEGRATED WITH FORMSPREE AND OLD ALERT) -->
     <section class="contact-section">
         <div class="contact-grid">
             <div class="contact-info reveal">
@@ -2962,19 +2953,24 @@
             </div>
             <div class="contact-form reveal reveal-delay-1">
                 <h3>Request Consultation</h3>
-                <form id="contactForm">
+                <form id="indexContactForm">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Full Name *" required>
+                        <input type="text" name="full-name" class="form-input" placeholder="Full Name *" data-fs-field
+                            required>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;" data-fs-error="full-name"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Email Address *" required>
+                        <input type="email" name="email" class="form-input" placeholder="Email Address *" data-fs-field
+                            required>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;" data-fs-error="email"></span>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-input" placeholder="Phone Number">
+                        <input type="tel" name="phone" class="form-input" placeholder="Phone Number" data-fs-field>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;" data-fs-error="phone"></span>
                     </div>
                     <div class="form-group">
-                        <select class="form-input">
-                            <option>Select Practice Area</option>
+                        <select name="practice-area" class="form-input" data-fs-field required>
+                            <option value="">Select Practice Area</option>
                             <option>Complex Litigation</option>
                             <option>Corporate Advisory</option>
                             <option>Intellectual Property</option>
@@ -2982,19 +2978,43 @@
                             <option>Global Compliance</option>
                             <option>Emerging Technology</option>
                         </select>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;"
+                            data-fs-error="practice-area"></span>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input" rows="5"
-                            placeholder="Tell us about your legal matter..."></textarea>
+                        <textarea name="message" class="form-input" rows="5"
+                            placeholder="Tell us about your legal matter..." data-fs-field required></textarea>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;" data-fs-error="message"></span>
                     </div>
-                    <button type="submit" class="btn-cta-primary" style="width:100%;justify-content:center;">Submit
-                        Request</button>
+                    <div class="checkbox-group"
+                        style="margin: 20px 0; display: flex; align-items: flex-start; gap: 12px; font-size: 0.76rem; color: var(--ash-2);">
+                        <input type="checkbox" id="indexConsent" name="consent" data-fs-field required
+                            style="accent-color: var(--gold-mid); margin-top: 3px;">
+                        <label for="indexConsent">I agree to the <a href="#" style="color:var(--gold-light);">Terms of
+                                Use</a> and <a href="#" style="color:var(--gold-light);">Privacy Policy</a>. I
+                            understand that submitting this form does not create an attorney-client
+                            relationship.*</label>
+                        <span style="color:#e0554a;font-size:0.7rem;display:block;" data-fs-error="consent"></span>
+                    </div>
+                    <!-- Formspree inline messages -->
+                    <div data-fs-success
+                        style="display:none; margin-bottom:20px; padding:16px; background:rgba(45,138,78,0.1); border:1px solid rgba(82,184,122,0.3); color:var(--success-light); text-align:center;">
+                        <i class="fas fa-check-circle"></i> Thank you! Your request has been sent. A partner will
+                        contact you soon.
+                    </div>
+                    <div data-fs-error
+                        style="display:none; margin-bottom:20px; padding:16px; background:rgba(224,85,74,0.08); border:1px solid rgba(224,85,74,0.2); color:#e0554a; text-align:center;">
+                        <i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please check the fields
+                        and try again.
+                    </div>
+                    <button type="submit" class="btn-cta-primary" style="width:100%;justify-content:center;"
+                        data-fs-submit-btn>Submit Request</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <!-- Footer -->
     <footer>
         <div class="footer-main">
             <div class="footer-brand">
@@ -3041,7 +3061,7 @@
         </div>
     </footer>
 
-    <!-- ═══════════════ CASE STATUS MODAL ═══════════════ -->
+    <!-- Case Status Modal -->
     <div class="modal-overlay" id="caseModal">
         <div class="modal-box">
             <div class="modal-header">
@@ -3100,7 +3120,6 @@
                             <div class="result-meta-val">Complex Commercial Litigation</div>
                         </div>
                     </div>
-                    <!-- Progress -->
                     <div class="progress-area">
                         <div class="progress-top">
                             <span>Case Progress</span>
@@ -3110,7 +3129,6 @@
                             <div class="prog-fill" id="rProgBar" style="width:55%"></div>
                         </div>
                     </div>
-                    <!-- Timeline -->
                     <div class="timeline" id="rTimeline">
                         <div class="tl-step completed">
                             <div class="tl-dot">✓</div>
@@ -3179,25 +3197,21 @@
         (function () {
             const DEMO_CASE = 'BG-FL-4429-CV-2025';
 
-            // ── Loader ──
+            // Loader
             window.addEventListener('load', () => {
                 setTimeout(() => document.getElementById('loader').classList.add('done'), 1800);
             });
 
-            // ── Custom Cursor ──
+            // Custom Cursor
             const dot = document.getElementById('cursorDot');
             const ring = document.getElementById('cursorRing');
-            let mx = 0,
-                my = 0,
-                rx = 0,
-                ry = 0;
+            let mx = 0, my = 0, rx = 0, ry = 0;
             document.addEventListener('mousemove', e => {
                 mx = e.clientX;
                 my = e.clientY;
                 dot.style.left = mx + 'px';
                 dot.style.top = my + 'px';
             });
-
             function animateRing() {
                 rx += (mx - rx) * 0.12;
                 ry += (my - ry) * 0.12;
@@ -3211,11 +3225,11 @@
                 el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
             });
 
-            // ── Header scroll ──
+            // Header scroll
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40));
 
-            // ── Mobile menu ──
+            // Mobile menu
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const nav = document.getElementById('mainNav');
             let menuOpen = false;
@@ -3228,34 +3242,27 @@
                 nav.classList.remove('open');
             }));
             window.addEventListener('resize', () => {
-                if (innerWidth > 768) {
-                    menuOpen = false;
-                    nav.classList.remove('open');
-                }
+                if (innerWidth > 768) { menuOpen = false; nav.classList.remove('open'); }
             });
 
-            // ── Reveal on scroll ──
+            // Reveal animations
             const reveals = document.querySelectorAll('.reveal');
             const io = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('visible');
-                        io.unobserve(e.target);
-                    }
-                });
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
             }, { threshold: 0.12 });
             reveals.forEach(r => io.observe(r));
-            document.querySelectorAll('.hero .reveal').forEach(r => setTimeout(() => r.classList.add(
-                'visible'), 200));
+            document.querySelectorAll('.hero .reveal').forEach(r => setTimeout(() => r.classList.add('visible'), 200));
 
-            // ── Form submission ──
-            document.getElementById('contactForm')?.addEventListener('submit', function (e) {
-                e.preventDefault();
+            // Formspree initialization
+            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#indexContactForm', formId: 'xaqgklda' });
+
+            // 👇 Old alert after successful submission
+            document.getElementById('indexContactForm').addEventListener('formspree:success', function () {
                 alert('Thank you for your inquiry. A partner will contact you within 2 business hours.');
-                this.reset();
             });
 
-            // ── Case Status Modal ──
+            // Case Status Modal
             const modal = document.getElementById('caseModal');
             const closeBtn = document.getElementById('closeModalBtn');
             const caseInput = document.getElementById('modalCaseInput');
@@ -3273,7 +3280,6 @@
                 loading.classList.remove('active');
                 setTimeout(() => caseInput.focus(), 300);
             }
-
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
@@ -3282,13 +3288,10 @@
                 caseBtn.textContent = 'Check Status';
                 loading.classList.remove('active');
             }
-
             document.getElementById('headerCaseBtn').addEventListener('click', openModal);
             closeBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-            });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
             document.getElementById('demoCodeBtn')?.addEventListener('click', () => {
                 caseInput.value = DEMO_CASE;
                 doCheck(DEMO_CASE);
@@ -3305,11 +3308,7 @@
                 }
                 n.textContent = msg;
                 notifArea.appendChild(n);
-                setTimeout(() => {
-                    n.style.opacity = '0';
-                    n.style.transition = 'opacity 0.4s';
-                    setTimeout(() => n.remove(), 400);
-                }, 3500);
+                setTimeout(() => { n.style.opacity = '0'; n.style.transition = 'opacity 0.4s'; setTimeout(() => n.remove(), 400); }, 3500);
             }
 
             function doCheck(val) {
@@ -3326,16 +3325,14 @@
                     loading.classList.remove('active');
                     if (cleaned === DEMO_CASE) {
                         document.getElementById('rCaseNum').textContent = cleaned;
-                        document.getElementById('rStatus').innerHTML =
-                            '<span class="status-pill active-case"><span class="status-pill-dot"></span>In Discovery</span>';
+                        document.getElementById('rStatus').innerHTML = '<span class="status-pill active-case"><span class="status-pill-dot"></span>In Discovery</span>';
                         document.getElementById('rProgBar').style.width = '55%';
                         document.getElementById('rPct').textContent = '55%';
                         results.classList.add('visible');
                         showNotif('Case found. Real-time progress loaded.', false);
                     } else {
                         document.getElementById('rCaseNum').textContent = cleaned;
-                        document.getElementById('rStatus').innerHTML =
-                            '<span class="status-pill" style="background:rgba(224,85,74,0.1);color:#e0554a;border:1px solid rgba(224,85,74,0.25);">⚠ Not Found</span>';
+                        document.getElementById('rStatus').innerHTML = '<span class="status-pill" style="background:rgba(224,85,74,0.1);color:#e0554a;border:1px solid rgba(224,85,74,0.25);">⚠ Not Found</span>';
                         document.getElementById('rProgBar').style.width = '0%';
                         document.getElementById('rPct').textContent = 'N/A';
                         results.classList.add('visible');
@@ -3349,24 +3346,23 @@
                     caseBtn.textContent = 'Check Status';
                 }, 1400 + Math.random() * 500);
             }
-
             caseBtn.addEventListener('click', () => doCheck(caseInput.value));
             caseInput.addEventListener('keydown', e => { if (e.key === 'Enter') doCheck(caseInput.value); });
 
-            // ── Smooth scroll for anchor links ──
+            // Smooth scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
                     const target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
                 });
             });
         })();
     </script>
+
+    <!-- Formspree AJAX library -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
 </html>
