@@ -14,28 +14,30 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
+        /* ===== ROOT VARIABLES — SAME AS INDEX.HTML ===== */
         :root {
-            --ink: #08090b;
-            --ink-2: #0e1015;
-            --ink-3: #151820;
-            --ink-4: #1c2030;
-            --ink-5: #242840;
-            --gold-deep: #7a5c1e;
-            --gold: #b8892a;
-            --gold-mid: #c6a15b;
-            --gold-light: #dbb67b;
-            --gold-pale: #f2d98a;
-            --gold-shimmer: #faefc4;
-            --cream: #f8f2e6;
-            --cream-2: #ede5d4;
-            --cream-3: #d4c9b4;
-            --ash: #8a8478;
-            --ash-2: #5e5a52;
-            --ash-3: #3a3830;
-            --white: #fdfcfa;
-            --success: #2d8a4e;
-            --success-light: #52b87a;
-            --amber: #c87c1a;
+            --ink: #ffffff;
+            --ink-2: #f5f8fc;
+            --ink-3: #eaf0f8;
+            --ink-4: #dde7f2;
+            --ink-5: #c7d7ea;
+            --gold-deep: #0d3b73;
+            --gold: #124e93;
+            --gold-mid: #1a63b8;
+            --gold-light: #2f7fd6;
+            --gold-pale: #4f97e0;
+            --gold-shimmer: #a9cdef;
+            --cream: #16233a;
+            --cream-2: #223349;
+            --cream-3: #3d5066;
+            --ash: #5c6b80;
+            --ash-2: #8394a8;
+            --ash-3: #b7c3d1;
+            --white: #0b1c33;
+            --success: #1e8a4e;
+            --success-light: #34b876;
+            --amber: #b8791f;
+            --burgundy: #8b3a3a;
             --ff-serif: 'Cormorant Garamond', Georgia, serif;
             --ff-sans: 'Syne', sans-serif;
             --ff-mono: 'DM Mono', monospace;
@@ -66,6 +68,7 @@
             cursor: none;
         }
 
+        /* Custom Cursor */
         .cursor-dot {
             position: fixed;
             width: 8px;
@@ -83,7 +86,7 @@
             position: fixed;
             width: 40px;
             height: 40px;
-            border: 1px solid rgba(198, 161, 91, 0.5);
+            border: 1px solid rgba(47, 127, 214, 0.5);
             border-radius: 50%;
             pointer-events: none;
             z-index: 99998;
@@ -95,7 +98,7 @@
             width: 64px;
             height: 64px;
             border-color: var(--gold-mid);
-            background: rgba(198, 161, 91, 0.05);
+            background: rgba(47, 127, 214, 0.05);
         }
 
         body * {
@@ -115,6 +118,7 @@
             border-radius: 4px;
         }
 
+        /* Loader */
         .loader {
             position: fixed;
             inset: 0;
@@ -199,6 +203,7 @@
             background-size: 256px;
         }
 
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -215,9 +220,9 @@
         }
 
         .header.scrolled {
-            background: rgba(8, 9, 11, 0.94);
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(24px);
-            border-bottom-color: rgba(184, 137, 42, 0.12);
+            border-bottom-color: rgba(26, 99, 184, 0.12);
         }
 
         .logo {
@@ -311,7 +316,7 @@
 
         .btn-track-header {
             background: none;
-            border: 1px solid rgba(184, 137, 42, 0.4);
+            border: 1px solid rgba(26, 99, 184, 0.4);
             color: var(--gold-light);
             padding: 10px 22px;
             font-family: var(--ff-sans);
@@ -326,9 +331,9 @@
         }
 
         .btn-track-header:hover {
-            background: rgba(184, 137, 42, 0.1);
+            background: rgba(26, 99, 184, 0.1);
             border-color: var(--gold-mid);
-            box-shadow: 0 0 24px rgba(184, 137, 42, 0.2);
+            box-shadow: 0 0 24px rgba(26, 99, 184, 0.2);
         }
 
         .mobile-menu-btn {
@@ -354,17 +359,17 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(184, 137, 42, 0.06) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(120, 90, 28, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse 80% 40% at 50% 0%, rgba(198, 161, 91, 0.03) 0%, transparent 50%);
+            background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(26, 99, 184, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(13, 59, 115, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 40% at 50% 0%, rgba(47, 127, 214, 0.03) 0%, transparent 50%);
         }
 
         .hero-grid {
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background-image: linear-gradient(rgba(184, 137, 42, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(184, 137, 42, 0.04) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(26, 99, 184, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 99, 184, 0.04) 1px, transparent 1px);
             background-size: 80px 80px;
             mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 0%, transparent 70%);
         }
@@ -423,10 +428,10 @@
             line-height: 1.8;
             color: var(--ash);
             max-width: 600px;
-            margin: 0 auto 0;
+            margin: 0 auto;
         }
 
-        /* Filter bar */
+        /* Filter Bar */
         .filter-bar {
             display: flex;
             justify-content: center;
@@ -437,7 +442,7 @@
 
         .filter-btn {
             background: none;
-            border: 1px solid rgba(184, 137, 42, 0.3);
+            border: 1px solid rgba(26, 99, 184, 0.3);
             color: var(--ash);
             padding: 12px 28px;
             font-family: var(--ff-sans);
@@ -451,7 +456,7 @@
         }
 
         .filter-btn:hover {
-            background: rgba(184, 137, 42, 0.1);
+            background: rgba(26, 99, 184, 0.1);
             border-color: var(--gold-mid);
             color: var(--gold-pale);
         }
@@ -460,16 +465,16 @@
             background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
             color: var(--ink);
             border-color: transparent;
-            box-shadow: 0 8px 24px rgba(184, 137, 42, 0.3);
+            box-shadow: 0 8px 24px rgba(26, 99, 184, 0.3);
         }
 
-        /* Attorney grid */
+        /* Attorney Grid */
         .attorney-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1px;
-            background: rgba(184, 137, 42, 0.1);
-            border: 1px solid rgba(184, 137, 42, 0.1);
+            background: rgba(26, 99, 184, 0.1);
+            border: 1px solid rgba(26, 99, 184, 0.1);
             margin-bottom: 80px;
         }
 
@@ -484,14 +489,14 @@
             background: var(--ink-3);
             transform: translateY(-8px);
             z-index: 2;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
 
         .attorney-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(184, 137, 42, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(26, 99, 184, 0.08) 0%, transparent 60%);
             opacity: 0;
             transition: opacity 0.4s;
             pointer-events: none;
@@ -504,7 +509,7 @@
         .attorney-img {
             height: 340px;
             overflow: hidden;
-            border-bottom: 1px solid rgba(184, 137, 42, 0.15);
+            border-bottom: 1px solid rgba(26, 99, 184, 0.15);
         }
 
         .attorney-img img {
@@ -539,7 +544,7 @@
             color: var(--gold-mid);
             margin-bottom: 16px;
             display: inline-block;
-            border-bottom: 1px solid rgba(184, 137, 42, 0.2);
+            border-bottom: 1px solid rgba(26, 99, 184, 0.2);
             padding-bottom: 6px;
         }
 
@@ -563,21 +568,21 @@
             letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--gold-deep);
-            background: rgba(184, 137, 42, 0.08);
-            border: 1px solid rgba(184, 137, 42, 0.15);
+            background: rgba(26, 99, 184, 0.08);
+            border: 1px solid rgba(26, 99, 184, 0.15);
             padding: 6px 12px;
             transition: all 0.3s;
         }
 
         .attorney-card:hover .specialty-tag {
             color: var(--gold-light);
-            border-color: rgba(184, 137, 42, 0.4);
+            border-color: rgba(26, 99, 184, 0.4);
         }
 
         .contact-details {
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid rgba(184, 137, 42, 0.1);
+            border-top: 1px solid rgba(26, 99, 184, 0.1);
         }
 
         .contact-item {
@@ -604,7 +609,7 @@
         .cta-section {
             text-align: center;
             padding: 120px 80px;
-            border-top: 1px solid rgba(184, 137, 42, 0.08);
+            border-top: 1px solid rgba(26, 99, 184, 0.08);
         }
 
         .cta-headline {
@@ -640,7 +645,7 @@
             cursor: pointer;
             border-radius: 2px;
             transition: box-shadow 0.4s, transform 0.3s;
-            box-shadow: 0 8px 40px rgba(184, 137, 42, 0.35);
+            box-shadow: 0 8px 40px rgba(26, 99, 184, 0.35);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -649,13 +654,13 @@
         }
 
         .btn-cta-large:hover {
-            box-shadow: 0 20px 60px rgba(184, 137, 42, 0.55);
+            box-shadow: 0 20px 60px rgba(26, 99, 184, 0.55);
             transform: translateY(-3px);
         }
 
         .btn-outline-large {
             background: none;
-            border: 1px solid rgba(184, 137, 42, 0.3);
+            border: 1px solid rgba(26, 99, 184, 0.3);
             color: var(--gold-light);
             padding: 20px 52px;
             font-family: var(--ff-sans);
@@ -672,14 +677,14 @@
         }
 
         .btn-outline-large:hover {
-            background: rgba(184, 137, 42, 0.08);
+            background: rgba(26, 99, 184, 0.08);
             border-color: var(--gold-mid);
-            box-shadow: 0 8px 32px rgba(184, 137, 42, 0.15);
+            box-shadow: 0 8px 32px rgba(26, 99, 184, 0.15);
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid rgba(184, 137, 42, 0.1);
+            border-top: 1px solid rgba(26, 99, 184, 0.1);
             background: var(--ink-2);
         }
 
@@ -726,7 +731,7 @@
             color: var(--cream-2);
             margin-bottom: 24px;
             padding-bottom: 12px;
-            border-bottom: 1px solid rgba(184, 137, 42, 0.1);
+            border-bottom: 1px solid rgba(26, 99, 184, 0.1);
         }
 
         .footer-col a {
@@ -759,7 +764,7 @@
         .social-links a {
             width: 36px;
             height: 36px;
-            border: 1px solid rgba(184, 137, 42, 0.2);
+            border: 1px solid rgba(26, 99, 184, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -778,7 +783,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(184, 137, 42, 0.08);
+            border-top: 1px solid rgba(26, 99, 184, 0.08);
             max-width: 1400px;
             margin: 0 auto;
             padding: 24px 80px;
@@ -809,7 +814,7 @@
             }
         }
 
-        /* Reveal */
+        /* Reveal animations */
         .reveal {
             opacity: 0;
             transform: translateY(32px);
@@ -836,6 +841,13 @@
             }
         }
 
+        @media (max-width: 992px) {
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
             .header {
                 padding: 0 24px;
@@ -852,10 +864,10 @@
                 top: 80px;
                 left: 0;
                 right: 0;
-                background: rgba(8, 9, 11, 0.98);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(24px);
                 padding: 20px 24px;
-                border-bottom: 1px solid rgba(184, 137, 42, 0.1);
+                border-bottom: 1px solid rgba(26, 99, 184, 0.1);
                 z-index: 4999;
             }
 
@@ -880,9 +892,9 @@
             }
 
             .footer-main {
-                grid-template-columns: 1fr;
-                gap: 40px;
                 padding: 40px 24px;
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
 
             .footer-bottom {
@@ -897,6 +909,7 @@
 
 <body>
 
+    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-logo">Bates & Gates</div>
         <div class="loader-bar-wrap">
@@ -904,19 +917,21 @@
         </div>
     </div>
 
+    <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
+    <!-- Header -->
     <header class="header" id="header">
         <a href="index.html" class="logo">
             <div class="logo-emblem">
-                <svg viewBox="0 0 46 46" fill="none">
-                    <rect x="1" y="1" width="44" height="44" stroke="#b8892a" stroke-width="1" />
-                    <rect x="5" y="5" width="36" height="36" stroke="#b8892a" stroke-width="0.5" stroke-opacity="0.4" />
-                    <circle cx="23" cy="16" r="8" fill="none" stroke="#d4a843" stroke-width="1.5" />
-                    <line x1="23" y1="8" x2="23" y2="24" stroke="#d4a843" stroke-width="1.5" />
-                    <line x1="15" y1="16" x2="31" y2="16" stroke="#d4a843" stroke-width="1.5" />
-                    <circle cx="23" cy="16" r="2.5" fill="#e8c060" />
+                <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="44" height="44" stroke="#1a63b8" stroke-width="1" />
+                    <rect x="5" y="5" width="36" height="36" stroke="#1a63b8" stroke-width="0.5" stroke-opacity="0.4" />
+                    <circle cx="23" cy="16" r="8" fill="none" stroke="#2f7fd6" stroke-width="1.5" />
+                    <line x1="23" y1="8" x2="23" y2="24" stroke="#2f7fd6" stroke-width="1.5" />
+                    <line x1="15" y1="16" x2="31" y2="16" stroke="#2f7fd6" stroke-width="1.5" />
+                    <circle cx="23" cy="16" r="2.5" fill="#4f97e0" />
                 </svg>
             </div>
             <div class="logo-text-wrap">
@@ -946,6 +961,7 @@
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-mesh"></div>
         <div class="hero-grid"></div>
@@ -960,6 +976,7 @@
         </div>
     </section>
 
+    <!-- Filter and Attorney Grid -->
     <div style="max-width:1400px;margin:0 auto;padding:0 30px;">
         <div class="filter-bar reveal">
             <button class="filter-btn active" data-filter="all">All Attorneys</button>
@@ -1002,7 +1019,7 @@
                     <div class="attorney-name">Jennifer M. Talbert</div>
                     <div class="attorney-title">Senior Partner</div>
                     <p class="attorney-bio">University of Chicago Law School, J.D. | Stanford University, B.S. Expert in
-                        corporate governance and executive compensation.</p>
+                        estate planning and probate law.</p>
                     <div class="specialties">
                         <span class="specialty-tag">Estate Planning</span>
                         <span class="specialty-tag">Probate Law</span>
@@ -1011,7 +1028,7 @@
                     <div class="contact-details">
                         <div class="contact-item"><i class="fas fa-envelope"></i> jtalbert@consultant.com</div>
                         <div class="contact-item"><i class="fas fa-phone"></i> (212) 867-5302</div>
-                        <div class="contact-item"><i class="fas fa-university"></i> Bar: NY, CT, FL</div>
+                        <div class="contact-item"><i class="fas fa-university"></i> Bar: OR, CT, FL</div>
                     </div>
                 </div>
             </div>
@@ -1068,17 +1085,17 @@
                         alt="Sarah Chen">
                 </div>
                 <div class="attorney-info">
-                    <div class="attorney-name">Sarah K. Chen</div>
+                    <div class="attorney-name">Clara K. Darte</div>
                     <div class="attorney-title">Associate</div>
                     <p class="attorney-bio">UC Berkeley School of Law, J.D. | MIT, B.S. Technology and intellectual
-                        property specialist with engineering background.</p>
+                        property specialist with estate planning and probate law background.</p>
                     <div class="specialties">
-                        <span class="specialty-tag">Patent Prosecution</span>
-                        <span class="specialty-tag">IP Litigation</span>
+                        <span class="specialty-tag">Probate Law</span>
+                        <span class="specialty-tag">Estate Planning</span>
                         <span class="specialty-tag">Technology Transactions</span>
                     </div>
                     <div class="contact-details">
-                        <div class="contact-item"><i class="fas fa-envelope"></i> schen@consultant.com</div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i> cdarte@consultant.com</div>
                         <div class="contact-item"><i class="fas fa-phone"></i> (813) 327-2099</div>
                         <div class="contact-item"><i class="fas fa-university"></i> Bar: NY, CA</div>
                     </div>
@@ -1110,6 +1127,7 @@
         </div>
     </div>
 
+    <!-- CTA -->
     <section class="cta-section">
         <div class="cta-headline reveal">Partner With <em>Our Team</em></div>
         <p class="cta-sub reveal reveal-delay-1">Schedule a confidential consultation with our senior partners.
@@ -1120,6 +1138,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-main">
             <div class="footer-brand">
@@ -1165,12 +1184,13 @@
         </div>
     </footer>
 
+    <!-- Case Status Modal -->
     <div class="modal-overlay" id="caseModal"
-        style="position:fixed;inset:0;z-index:50000;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity 0.4s,visibility 0.4s;">
+        style="position:fixed;inset:0;z-index:50000;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:opacity 0.4s,visibility 0.4s;">
         <div class="modal-box"
-            style="background:var(--ink-2);border:1px solid rgba(184,137,42,0.15);width:100%;max-width:720px;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(32px);transition:transform 0.5s var(--ease-out);">
+            style="background:var(--ink-2);border:1px solid rgba(26,99,184,0.15);width:100%;max-width:720px;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(32px);transition:transform 0.5s var(--ease-out);">
             <div
-                style="padding:40px 40px 0;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid rgba(184,137,42,0.1);padding-bottom:28px;margin-bottom:32px;">
+                style="padding:40px 40px 0;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid rgba(26,99,184,0.1);padding-bottom:28px;margin-bottom:32px;">
                 <div>
                     <div style="font-family:var(--ff-serif);font-size:1.8rem;font-weight:400;color:var(--cream);">Case
                         Status Portal</div>
@@ -1182,14 +1202,14 @@
             <div style="padding:0 40px 40px;">
                 <p style="font-size:0.68rem;color:var(--ash-2);margin-bottom:12px;">Enter your case reference number.
                     <span
-                        style="font-family:var(--ff-mono);color:var(--gold-mid);background:rgba(184,137,42,0.08);padding:2px 8px;cursor:pointer;"
-                        id="demoCodeBtn">BG-FL-4429-CV-2025</span>
+                        style="font-family:var(--ff-mono);color:var(--gold-mid);background:rgba(26,99,184,0.08);padding:2px 8px;cursor:pointer;"
+                        id="demoCodeBtn">XX-XX-XXX-XX-XX25</span>
                 </p>
                 <div id="notifArea"></div>
                 <div style="display:flex;gap:12px;">
                     <div style="flex:1;position:relative;">
                         <input type="text" id="modalCaseInput" placeholder="Enter case reference number"
-                            style="width:100%;background:var(--ink);border:1px solid rgba(184,137,42,0.15);color:var(--cream);padding:16px 50px 16px 20px;font-family:var(--ff-mono);">
+                            style="width:100%;background:var(--ink);border:1px solid rgba(26,99,184,0.15);color:var(--cream);padding:16px 50px 16px 20px;font-family:var(--ff-mono);">
                         <span
                             style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--ash-2);">⌕</span>
                     </div>
@@ -1199,7 +1219,7 @@
                 </div>
                 <div id="modalLoading" style="display:none;text-align:center;padding:48px 0;">
                     <div
-                        style="width:48px;height:48px;border:2px solid rgba(184,137,42,0.15);border-top-color:var(--gold-mid);border-radius:50%;margin:0 auto 20px;animation:spin 0.9s linear infinite;">
+                        style="width:48px;height:48px;border:2px solid rgba(26,99,184,0.15);border-top-color:var(--gold-mid);border-radius:50%;margin:0 auto 20px;animation:spin 0.9s linear infinite;">
                     </div>
                     <p style="color:var(--ash);">Retrieving case information…</p>
                 </div>
@@ -1296,12 +1316,12 @@
                 setTimeout(() => {
                     loading.style.display = 'none';
                     if (cleaned === DEMO_CASE) {
-                        results.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,137,42,0.1);border:1px solid rgba(184,137,42,0.1);margin-bottom:24px;">
+                        results.innerHTML = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,99,184,0.1);border:1px solid rgba(26,99,184,0.1);margin-bottom:24px;">
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Case Reference</div><div style="color:var(--gold-light);font-family:var(--ff-mono);">${cleaned}</div></div>
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Status</div><span style="background:rgba(200,124,26,0.1);color:#c87c1a;border:1px solid rgba(200,124,26,0.25);padding:5px 12px;font-size:0.62rem;">● In Discovery</span></div>
                             <div style="background:var(--ink-3);padding:18px 20px;"><div style="font-size:0.58rem;color:var(--ash-2);">Est. Resolution</div><div style="color:var(--gold-light);">Q3 2026</div></div>
                         </div>
-                        <div style="margin-bottom:24px;"><div style="display:flex;justify-content:space-between;font-size:0.68rem;color:var(--ash);margin-bottom:10px;"><span>Case Progress</span><span style="color:var(--gold-light);">55%</span></div><div style="height:3px;background:rgba(184,137,42,0.08);"><div style="width:55%;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));"></div></div></div>
+                        <div style="margin-bottom:24px;"><div style="display:flex;justify-content:space-between;font-size:0.68rem;color:var(--ash);margin-bottom:10px;"><span>Case Progress</span><span style="color:var(--gold-light);">55%</span></div><div style="height:3px;background:rgba(26,99,184,0.08);"><div style="width:55%;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));"></div></div></div>
                         <div style="display:flex;flex-direction:column;gap:18px;">
                             <div style="display:flex;gap:18px;"><div style="width:33px;height:33px;border-radius:50%;background:rgba(45,138,78,0.1);border:1px solid rgba(82,184,122,0.4);color:#52b87a;display:flex;align-items:center;justify-content:center;">✓</div><div><div style="font-weight:600;color:var(--cream-2);">Case Filed & Complaint Served</div><div style="font-size:0.72rem;color:var(--ash);">U.S. District Court, M.D. Florida</div></div></div>
                             <div style="display:flex;gap:18px;"><div style="width:33px;height:33px;border-radius:50%;background:rgba(200,124,26,0.1);border:1px solid rgba(200,124,26,0.4);color:#c87c1a;display:flex;align-items:center;justify-content:center;">◉</div><div><div style="font-weight:600;color:#c87c1a;">Discovery Phase — Active</div><span style="background:rgba(200,124,26,0.1);color:#c87c1a;border:1px solid rgba(200,124,26,0.2);padding:4px 12px;font-size:0.62rem;">Depositions: 6 of 12</span></div></div>
